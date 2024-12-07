@@ -23,14 +23,14 @@ const app = server.listen(8080, () => {
 const io = new Server(app, {
   cors: {
     origin: "https://socket-client-two-psi.vercel.app",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true,
-    allowedHeaders: ["my-custom-header"],
+    // methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    // credentials: true,
+    // allowedHeaders: ["my-custom-header"],
   },
-  allowRequest: (req, callback) => {
-    const noOriginHeader = req.headers.origin === undefined;
-    callback(null, noOriginHeader);
-  },
+  // allowRequest: (req, callback) => {
+  //   const noOriginHeader = req.headers.origin === undefined;
+  //   callback(null, noOriginHeader);
+  // },
 });
 io.on("connect", (socket) => {
   socketApp = socket;
