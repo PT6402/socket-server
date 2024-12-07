@@ -21,8 +21,8 @@ const app = server.listen(8080, () => {
 const io = new socket_io_1.Server(app, {
     cors: {
         origin: "https://socket-client-two-psi.vercel.app",
-        // methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-        // credentials: true,
+        methods: ["GET", "POST"],
+        credentials: true,
         // allowedHeaders: ["my-custom-header"],
     },
     // allowRequest: (req, callback) => {
