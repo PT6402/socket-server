@@ -21,7 +21,7 @@ const app = server.listen(8080, () => {
   console.log(`server running on http://localhost:${8080}`);
 });
 const io = new Server(app, {
-  cors: { origin: "https://socket-server-gamma.vercel.app" },
+  cors: { origin: "https://socket-client-two-psi.vercel.app" },
 });
 io.on("connect", (socket) => {
   socketApp = socket;
