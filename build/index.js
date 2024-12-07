@@ -25,6 +25,10 @@ const io = new socket_io_1.Server(app, {
         credentials: true,
         allowedHeaders: ["my-custom-header"],
     },
+    allowRequest: (req, callback) => {
+        const noOriginHeader = req.headers.origin === undefined;
+        callback(null, noOriginHeader);
+    },
 });
 io.on("connect", (socket) => {
     socketApp = socket;
