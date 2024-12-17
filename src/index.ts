@@ -22,7 +22,7 @@ const app = server.listen(8080, () => {
 });
 const io = new Server(app, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://socket-client-omega.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
     // allowedHeaders: ["my-custom-header"],
@@ -32,7 +32,7 @@ const io = new Server(app, {
   //   callback(null, noOriginHeader);
   // },
 });
-io.on("connect", (socket) => {
+io.on("connection", (socket) => {
   socketApp = socket;
   console.log(`Client connected: ${socket.id}`);
 });
